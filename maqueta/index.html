@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawniko</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets/Sello Nicolás (PNG).png" type="image/x-icon">
+</head>
+<!-- Menú -->
+<div class="header-container">
+    <h1 class="header-title">DRAWNIKO</h1>
+    <img class="presentation-logo" src="/assets/Sello Nicolás (PNG).png" alt="Logo personal">
+    
+    <nav class="menu">
+        <menu class="menu_contenido">
+            <ul class="ul_menu">
+                <a class="header__menú__link" href="historia.html"><input class="btn" id="btn-historia" type="button" value="HISTORIA"></input></a>
+                <a class="header__menú__link" href="categorias.html"><input class="btn" id="btn-categorías" type="button" value="CATEGORÍAS"></input></a>
+                <a class="header__menú__link" href="contacto.html"><input class="btn" id="btn-contacto" type="button" value="CONTACTO"></input></a>
+            </ul  class="ul_menu">
+        </menu>
+    </nav>
+</div>
+
+<body>
+        <!-- Sección de Presentación -->
+        <section class="presentacion">
+            <div class="presentacion__contenedor">
+                <img class="presentacion__foto" src="/img/Mi foto.jpeg" alt="Foto de perfil">
+                <div class="parrafo__presentacion">
+                <h2 class="presentacion__titulo">Hola, me llamo Nicolás Muñoz Bacián y soy Diseñador Gráfico</h2>
+                <p class="presentacion__subtitulo">Soy exalumno de la carrera de Diseño técnico y profesional de la Universidad de Inacap
+                    en Iquique, Región de Tarapacá, Chile.<br>
+                </div>
+                    <div class="presentacion__contenedor__redes">
+                <ul class="redes">
+                    <li class="redes__img"><a href="https://github.com/Nicolas-Munoz-Bacian">Github <img src="/img/icons/logotipo-de-github.png" alt="Github icono"></a></li>
+                    <li class="redes__img"><a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-baci%C3%A1n-a11369237/">Linkedin<img src="/img/icons/linkedin icono.png" alt="Linkedin icono"></a></li>
+                    <li class="redes__img"><a href="https://www.instagram.com/drawniko3/">Instagram <img src="/img/icons/Instagram.png" alt="Instagram icono"></a></li>
+                </ul>
+                    </div>
+            </div>
+        </section>
+
+                <!-- Sección sobre mí -->
+    
+                <section class="sobre-mi" id="sobre-mi">
+                    <div class="presentacion__sobre_mi__contenedor">
+                        <div class="parrafo__sobre__mi">
+                            <h2 class="sobre-mi__titulo">SOBRE MÍ</h2>
+                            <p class="sobre-mi__texto">Busco utilizar mis conocimientos y habilidades de Diseño Digital en el área industrial o social para alcanzar
+                                 los objetivos en el área de diseño de la institución en que preste mis servicios.</p>
+                                 <p class="sobre-mi__descripción">
+                                    Soy alguién dinámico y habituado al trabajo bajo presión; con gran sentido de responsabilidad, así como con capacidad de generar valor 
+                                    agregado a la organización mediante creación de ideas e iniciativa propia para la resolución de problemas. 
+                                </p>
+                        </div>
+            
+                    </div>
+            
+                    </div>
+                    </div>
+                </section>
+            </section>
+
+
+        <div class="Contenido_central_volver_arriba">
+            <button class="btn_volver_arriba" id="volver-cabecera">Volver arriba</button>
+        </div>
+                    
+            <!-- Tu código HTML -->
+            <script>
+                const botonVolver = document.getElementById('volver-cabecera');
+          
+                botonVolver.addEventListener('click', () => {
+                  document.querySelector('.presentacion').scrollIntoView({ behavior: 'smooth' });
+                });
+        
+                
+        
+                const nombreInput = document.querySelector('input[name="nombre"]');
+                const form = document.querySelector('form');
+        
+                form.addEventListener('submit', (event) => {
+                    const nombre = nombreInput.value.trim();
+        
+                    if (nombre === '') {
+                        alert('El campo Nombre no debe estar vacío.');
+                        event.preventDefault();
+                    } else if (nombre.length > 50) {
+                        alert('El campo Nombre no debe tener más de 50 caracteres.');
+                        event.preventDefault();
+                    } else {
+                        // Enviar el correo electrónico
+                        emailjs.sendForm('service_id', 'template_id', form, 'user_id')
+                            .then((response) => {
+                                console.log('SUCCESS!', response.status, response.text);
+                                // Mostrar un mensaje de éxito al usuario
+                                alert('¡Mensaje enviado correctamente!');
+                                // Limpiar el formulario
+                                form.reset();
+                            })
+                            .catch((error) => {
+                                console.log('FAILED...', error);
+                                // Mostrar un mensaje de error al usuario
+                                alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo más tarde.');
+                            });
+                    }
+                });
+              </script>
+        <!-- Sección de rodapie (FOOTER) -->
+    
+        <footer class="footer">
+            <div class="contenido_footer">
+                <div class="footer_text_contenido">
+                    <div class="derechos_de_autor_text">
+                        <h1><p class="p_footer">(+56) 9 4046 2468</p>
+                            <p class="p_footer">disenadornm@gmail.com</p>
+                            <p class="p_footer">©Drawniko. 2025.</p>
+                        </h1>
+                        <img class="presentación__logo__personal" src="/assets/Sello Nicolás (PNG).png" alt="Logo personal">
+                        <div class="presentación__enlaces__iconos">
+                                <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-baci%C3%A1n-a11369237/">
+                                <img src="/img/icons/linkedin icono.png" alt="Instagram icono" width="30px" height="30px"></a>
+    
+                                <a href="https://www.instagram.com/drawniko3/">
+                                <img src="/img/icons/Instagram.png" alt="Linkedin icono" width="30px" height="30px"></a>
+                                
+                                <a href="https://github.com/Nicolas-Munoz-Bacian">
+                                <img src="/img/icons/logotipo-de-github.png" alt="Youtube icono" width="30px" height="30px"></a>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+</body>
+</html>
